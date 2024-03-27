@@ -53,28 +53,10 @@ def calc_screen(n, orb_coeff, orb_norm_coeff, tot_norm, tot_zeta, dis_R, pot_R, 
 
 def eval_final_screen(density_R, screen_R, dis_R, final_dis_R):
 
-  max_peak_index, _ = signal.find_peaks(density_R)
   screen = 0.0
   density = 0.0
 
-  stat_index = []
-
-  for i in max_peak_index:
-    stat_index.append(i)
-    for j in range(len(dis_R)):
-      if ( density_R[i-j-1] > density_R[i]/100000.0 ):
-        stat_index.append(i-j-1)
-      else:
-        break
-    for j in range(len(dis_R)):
-      if ( density_R[i+j+1] > density_R[i]/100000.0 ):
-        stat_index.append(i+j+1)
-      else:
-        break
-
-  stat_index_sort = sorted(stat_index)
-
-  for j in range(stat_index_sort[len(stat_index_sort)-1]):
+  for j in range(len(dis_R)):
     if dis_R[j] in final_dis_R:
       screen_index = final_dis_R.index(dis_R[j])
       screen = screen+screen_R[screen_index]*density_R[j]
@@ -83,5 +65,3 @@ def eval_final_screen(density_R, screen_R, dis_R, final_dis_R):
   final_screen = screen/density
 
   return final_screen
-
-

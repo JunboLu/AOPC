@@ -38,7 +38,7 @@ if not os.path.exists(output_file):
   log_info.log_error('The %s file does not exist' %(output_file))
   exit()
 
-Rmax = 10.0
+Rmax = 20.0
 increment = 0.001
 n, orb_coeff, tot_zeta, true_q_num = orb_info.ext_orb(int(orbital[0]), orbital[1].upper(), output_file)
 orb_norm_coeff, tot_norm = orb_info.cal_norm(n, orb_coeff, tot_zeta)

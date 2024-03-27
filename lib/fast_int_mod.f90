@@ -22,8 +22,8 @@ contains
     real(kind=4),dimension(n)::orb_coeff
     real(kind=4),dimension(n)::orb_norm_coeff
     real(kind=4),dimension(n)::tot_zeta
-    real(kind=4),dimension(n,n,10000)::int_part
-    real(kind=4),dimension(10000)::final_int
+    real(kind=4),dimension(n,n,20000)::int_part
+    real(kind=4),dimension(20000)::final_int
     real(kind=4)::final_int_value
     real(kind=4)::int_value
 
@@ -37,7 +37,7 @@ contains
     !f2py intent(in)::tot_zeta
     !f2py intent(out)::final_int
 
-    batch = 10000
+    batch = 20000
 
     do i=1,1001
       f1(i) = 0.0
@@ -112,8 +112,8 @@ contains
     real(kind=4),dimension(n)::orb_coeff
     real(kind=4),dimension(n)::orb_norm_coeff
     real(kind=4),dimension(n)::tot_zeta
-    real(kind=4),dimension(n,n,10000)::int_part_1, int_part_2, int_part_3
-    real(kind=4),dimension(10000)::final_int
+    real(kind=4),dimension(n,n,20000)::int_part_1, int_part_2, int_part_3
+    real(kind=4),dimension(20000)::final_int
     real(kind=4)::final_int_value
     real(kind=4)::int_value_1, int_value_2, int_value_3
 
@@ -133,7 +133,7 @@ contains
       r_choose(i) = 0.0
     end do
 
-    batch = 10000
+    batch = 20000
 
     do i=1,n
       do j=1,n

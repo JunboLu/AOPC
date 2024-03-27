@@ -73,7 +73,7 @@ def kernel(work_dir, file_name, atom, orb):
   for i in range(len(veff)):
     r.append(rmin*rfac**(i))
 
-  inter_r = np.arange(0.000002, 10.000001, 0.000001)
+  inter_r = np.arange(0.000002, 20.000000, 0.000001)
   interp_func = interp1d(r, veff, kind='cubic')
 
   inter_veff = interp_func(list(inter_r))
