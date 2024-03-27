@@ -1,0 +1,8 @@
+#! /bin/bash
+
+export AOPC_path=/home/lujunbo/code/AOPC
+export python_exe=/home/lujunbo/bin/deepmd-kit-2.2.2-cpu/bin/python3.10
+
+work_dir=`pwd`
+
+${python_exe} ${AOPC_path}/analyze/kernel.py $1 $2 ${work_dir}
